@@ -15,6 +15,7 @@ import java.awt.event.ActionEvent; // Making buttons work
 import java.awt.event.ActionListener; // Making buttons work
 
 public class JahWindow extends JFrame {
+        // adding sister panels to the program
 	JPanel container;
 	Panel1 register;
 	Panel2 login;
@@ -23,16 +24,16 @@ public class JahWindow extends JFrame {
 
 	public JahWindow() {
 
-                this.setSize(750, 500);
-                this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                this.setTitle("JahWindow");
+                this.setSize(750, 500); //setting the size of the window
+                this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //quitting program on exit
+                this.setTitle("JahWindow"); //setting title of window
 
-                container = new JPanel();
-                container.setLayout( new CardLayout());
+                container = new JPanel(); //init panels in the window
+                container.setLayout( new CardLayout()); //setting layout properties
 
-                register = new Panel1(container);
-                login = new Panel2(container);
-                accepted = new Panel3(container);
+                register = new Panel1(container); //init panels in the window
+                login = new Panel2(container); //init panels in the window
+                accepted = new Panel3(container); //init panels in the window
                 // accepted = new Panel4(container);
 
                 container.add(register, "Register");
