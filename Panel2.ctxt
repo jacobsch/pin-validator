@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Panel2
+comment1.params=c
+comment1.target=Panel2(javax.swing.JPanel)
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=
+comment3.target=void\ initComponents()
+comment4.params=e
+comment4.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment5.params=e
+comment5.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment6.params=e
+comment6.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment7.params=fileName\ inputEmail\ inputPin
+comment7.target=boolean\ checkJSON(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment8.params=fileName
+comment8.target=java.lang.Object\ readJSON(java.lang.String)
+comment9.params=
+comment9.target=void\ playMusic()
+numComments=10
