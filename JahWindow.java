@@ -1,8 +1,18 @@
-import java.awt.*;
-import javax.swing.*;
-import java.awt.event.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+// Pin Validator Java Semi Final Project
+/*
+   Created by Owen Holman and Jacob Schwartz
+   Pin Validator mimics a bank ATM
+   Our program extends over 4 files and uses
+   different windows. The program will read and write
+   accounts into .json files so you can quit the program
+   and will not lose information at the Bank of Jah
+*/
+// Importing Required packages
+import java.awt.*; // Everything needed
+import javax.swing.*; // GUI
+import java.awt.event.*; // Making buttons work
+import java.awt.event.ActionEvent; // Making buttons work
+import java.awt.event.ActionListener; // Making buttons work
 
 public class JahWindow extends JFrame {
 	JPanel container;
