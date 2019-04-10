@@ -1,3 +1,4 @@
+ // Pin Validator Java Semi Final Project
     import java.awt.*;
     import javax.swing.*;
     import java.awt.event.*;
@@ -10,7 +11,7 @@
     import javax.swing.JOptionPane;
     
     public class Panel1 extends JPanel {
-    
+        // Init all buttons and tags in the program so we can use them later
         private JPanel container;
     
         private JButton toLogin;
@@ -42,27 +43,27 @@
         JLabel lblGender;
     
         public Panel1(JPanel c) {
-    
+        // One of our panels
             container = c;
             this.setLayout(null);
             initComponents();
     
             toLogin = new JButton("I'm already registered");
-            toLogin.setBounds(75, 310, 180, 25);
-            this.add(toLogin);
-            this.setBackground(Color.RED);
+            toLogin.setBounds(75, 310, 180, 25); // Adding text to the panel
+            this.add(toLogin); // Adding button to the panel
+            this.setBackground(Color.RED); // Giving background colour to the panel to differentiate them
             toLogin.addActionListener( new ActionListener() {
     
                 public void actionPerformed(ActionEvent e) {
                     CardLayout cardLayout = (CardLayout) container.getLayout();
-                    cardLayout.show(container, "Login");
+                    cardLayout.show(container, "Login"); // Performed after button is pressed
                 }
     
             });
         }
     
         public void initComponents() {
-    
+            //Giving value to all our tags we initialized earlier
             //construct array for combo box (pre-component)
             String[] comboxGenderItems = {"Male", "Female", "Vatougios"};
     
@@ -89,7 +90,7 @@
             txtEmail = new JTextField (5);
             comboxGender = new JComboBox (comboxGenderItems);
             lblGender = new JLabel ("Sex *");
-    
+            //Giving our values positioning on the panels
             //set component bounds (only needed by Absolute Positioning)
             lblTitle.setBounds (330, 15, 80, 25);
             lblName1.setBounds (315, 45, 120, 25);
@@ -112,7 +113,7 @@
             txtEmail.setBounds (275, 135, 180, 25);
             comboxGender.setBounds (470, 135, 180, 25);
             lblGender.setBounds (470, 115, 80, 25);
-    
+            //Actually adding the components to the panel
             //add components
             add (lblTitle);
             add (lblName1);
