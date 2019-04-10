@@ -220,7 +220,7 @@
         information.put("phone", txtPhone.getText());
         information.put("sex", String.valueOf(comboxGender.getSelectedItem()));
         //Writing the file to the /accounts path with the fileName created earlier
-        Files.write(Paths.get("accounts/"+fileName), information.toJSONString().getBytes());
+        Files.write(Paths.get("accounts/" + fileName), information.toJSONString().getBytes());
 
     }
 

@@ -179,7 +179,7 @@ public class Panel2 extends JPanel {
             // String content = new String(Files.readAllBytes(Paths.get(fileName)));
 
 
-        JSONObject databaseInfo = (JSONObject) readJSON("accounts/"+fileName);
+        JSONObject databaseInfo = (JSONObject) readJSON(fileName);
 
         String dbPin = String.valueOf(databaseInfo.get("pin"));
         String dbEmail = String.valueOf(databaseInfo.get("email"));
@@ -197,7 +197,7 @@ public class Panel2 extends JPanel {
 
     public Object readJSON(String fileName) throws Exception {
 
-        FileReader reader = new FileReader("accounts/"+fileName);
+        FileReader reader = new FileReader("accounts/" + fileName);
         JSONParser jsonParser = new JSONParser();
 
         return jsonParser.parse(reader);
