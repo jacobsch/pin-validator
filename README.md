@@ -1,7 +1,6 @@
 # pin-validator
 
-Before running JahWindow create a folder titled accounts in the same directory that the program is stored in.
-
+To run program compile through JahWindow, currently through BlueJay but will be compiling into .jar soon
 
 This is the assignment are teacher tasked us with creating:
 In this assignment, you are going to pre-load (store) a few accounts w/information in the code that will
