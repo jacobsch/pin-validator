@@ -1,4 +1,3 @@
-// Pin Validator Java Semi Final Project
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -9,9 +8,15 @@ import java.io.File;
 
 import javax.swing.JOptionPane;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+
 public class Panel3 extends JPanel {
 
     private JPanel container;
+    private Panel3 accepted;
 
     private JButton toLogin;
     private JButton btnQuit;
@@ -24,9 +29,13 @@ public class Panel3 extends JPanel {
 
     public Panel3(JPanel c) {
 
+        accepted = this;
+
         container = c;
         this.setLayout(null);
         initComponents();
+
+        music(true);
 
         toLogin = new JButton("Logout");
         toLogin.setBounds (300, 365, 135, 25);
@@ -35,10 +44,16 @@ public class Panel3 extends JPanel {
         toLogin.addActionListener( new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
+
+                music(false);
+                c.remove(accepted);
+                revalidate();
+                repaint();
                 CardLayout cardLayout = (CardLayout) container.getLayout();
                 cardLayout.show(container, "Login");
             }
         });
+
     }
 
     public void initComponents() {
@@ -85,4 +100,29 @@ public class Panel3 extends JPanel {
         });
     }
 
+    public void music(boolean option) {
+        try {
+            String clip = "src/moonlight.wav";
+            InputStream in = new FileInputStream(clip);
+            AudioStream audioStream = new AudioStream(in);
+
+            if (option) {
+                try {
+                    //Fantastic Easter Egg for the 1000iq
+                    AudioPlayer.player.start(audioStream);
+                } catch(Exception ex) {
+                    JOptionPane.showMessageDialog(container, "Music Start Exception!");
+                }
+            } else {
+                try {
+                    AudioPlayer.player.stop(audioStream);
+                } catch(Exception ex) {
+                    JOptionPane.showMessageDialog(container, "Music Stop Exception!");
+                }
+            }
+
+        } catch(Exception ex) {
+            JOptionPane.showMessageDialog(container, "Music setup exception!");
+        }
+    }
 }

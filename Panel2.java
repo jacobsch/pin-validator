@@ -1,4 +1,3 @@
-// Pin Validator Java Semi Final Project
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -12,14 +11,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import javax.swing.JOptionPane;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
-
 public class Panel2 extends JPanel {
 
     private JPanel container;
+    Panel3 accepted;
 
     private JButton toRegister;
     private JButton btnLogin;
@@ -129,9 +124,12 @@ public class Panel2 extends JPanel {
                     try {
                       if (checkJSON(fileName, inputEmail, inputPin)) {
                         JOptionPane.showMessageDialog(container, "Valid!");
+
+                        accepted = new Panel3(container); //init panels in the window
+                        container.add(accepted, "Accepted");
+
                         CardLayout cardLayout = (CardLayout) container.getLayout();
                         cardLayout.show(container, "Accepted");
-                        playMusic();
 
                     } else {
                         JOptionPane.showMessageDialog(container, "Invalid!");
@@ -201,22 +199,6 @@ public class Panel2 extends JPanel {
         JSONParser jsonParser = new JSONParser();
 
         return jsonParser.parse(reader);
-
-    }
-
-    public void playMusic() {
-
-        try {
-            //Fantastic Easter Egg for the 1000iq
-            String clip = "src/moonlight.wav";
-            InputStream in = new FileInputStream(clip);
-            AudioStream audioStream = new AudioStream(in);
-
-            AudioPlayer.player.start(audioStream);
-
-        } catch(Exception ex) {
-            JOptionPane.showMessageDialog(container, "Music Exception!");
-        }
 
     }
 

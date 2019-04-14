@@ -15,12 +15,11 @@ import java.awt.event.ActionEvent; // Making buttons work
 import java.awt.event.ActionListener; // Making buttons work
 
 public class JahWindow extends JFrame {
-        // adding sister panels to the program
+  
+  // adding sister panels to the program
 	JPanel container;
 	Panel1 register;
 	Panel2 login;
-	Panel3 accepted;
-	// Panel4 accepted;
 
 	public JahWindow() {
 
@@ -33,13 +32,9 @@ public class JahWindow extends JFrame {
 
                 register = new Panel1(container); //init panels in the window
                 login = new Panel2(container); //init panels in the window
-                accepted = new Panel3(container); //init panels in the window
-                // accepted = new Panel4(container);
 
                 container.add(register, "Register");
                 container.add(login, "Login");
-                // container.add(denied, "Denied");
-                container.add(accepted, "Accepted");
 
                 this.add(container);
                 this.setVisible(true);

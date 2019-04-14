@@ -8,4 +8,6 @@ comment3.params=
 comment3.target=void\ initComponents()
 comment4.params=e
 comment4.target=void\ actionPerformed(java.awt.event.ActionEvent)
-numComments=5
+comment5.params=option
+comment5.target=void\ music(boolean)
+numComments=6

@@ -16,6 +16,4 @@ comment7.params=fileName\ inputEmail\ inputPin
 comment7.target=boolean\ checkJSON(java.lang.String,\ java.lang.String,\ java.lang.String)
 comment8.params=fileName
 comment8.target=java.lang.Object\ readJSON(java.lang.String)
-comment9.params=
-comment9.target=void\ playMusic()
-numComments=10
+numComments=9
