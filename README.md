@@ -1,6 +1,6 @@
 # pin-validator
 
-To run program compile through JahWindow, currently through BlueJay but will be compiling into .jar soon
+To run program compile through JahWindow, currently through BlueJ but will be compiling into .jar soon
 
 If you don't want to register you can use our dummy account for login purposes:
 

@@ -8,9 +8,7 @@ import java.awt.image.BufferedImage; // Allow images to work
 import javax.imageio.ImageIO; // Allow images to work
 import java.io.*; // Allow external sources
 import java.io.File; // Allow external files
-
 import javax.swing.JOptionPane; // Giving us more control with our Panels
-
 import java.io.FileInputStream; // Allow files to work in program
 import java.io.InputStream; // Allow files to work in program
 import sun.audio.AudioPlayer; // Allow audio to work
@@ -21,9 +19,9 @@ public class Panel3 extends JPanel {
 
     private JPanel container; // Adding the container locally so it does not interfere with the other panel files
     private Panel3 accepted; // Adding the container locally so it does not interfere with the other panel files
-
     private JButton toLogin; // Adding the container locally so it does not interfere with the other panel files
     private JButton btnQuit; // Adding the container locally so it does not interfere with the other panel files
+    private AudioStream audioStream; // Creating a private variable to hold the audio that plays
 
     JLabel lblTitle; // Init this label to the program
     JLabel lblName1; // Init this label to the program
@@ -39,7 +37,7 @@ public class Panel3 extends JPanel {
         this.setLayout(null); // Setting the layout to null
         initComponents(); // Running the method which is summoning our components to be rendered in the window
 
-        music(true); // Playing some toons! ♪
+        music("play"); // Playing some toons! ♪
 
         toLogin = new JButton("Logout"); // Adding a button
         toLogin.setBounds (300, 365, 135, 25); // Adding boundaries to the button
@@ -49,7 +47,7 @@ public class Panel3 extends JPanel {
             // action when btn clicked
             public void actionPerformed(ActionEvent e) {
 
-                music(false);
+                music("pause");
                 c.remove(accepted);
                 revalidate();
                 repaint();
@@ -105,13 +103,13 @@ public class Panel3 extends JPanel {
         }); // end of btnQuit
     } // end of initComponents
 
-    public void music(boolean option) {
+    public void music(String option) {
         try {
             String clip = "src/moonlight.wav"; // Giving the music file path a String name
             InputStream in = new FileInputStream(clip); // Bring the file into the program
-            AudioStream audioStream = new AudioStream(in); // Bringing the file as audio
+            audioStream = new AudioStream(in); // Bringing the file as audio
 
-            if (option) {
+            if (option.equals("play")) {
                 // determining if music will play
                 try {
                     //Fantastic Easter Egg for the 1000iq
@@ -119,12 +117,18 @@ public class Panel3 extends JPanel {
                 } catch(Exception ex) {
                     JOptionPane.showMessageDialog(container, "Music Start Exception!"); // prompt
                 }
-            } else {
+            } else if (option.equals("pause")) {
                 try {
-                    AudioPlayer.player.stop(audioStream); // stop
+                    if (audioStream != null) {
+                        AudioPlayer.player.stop(audioStream);
+                    } else {
+                        JOptionPane.showMessageDialog(container, "Audio is null!");
+                    }
                 } catch(Exception ex) {
                     JOptionPane.showMessageDialog(container, "Music Stop Exception!"); // prompt
                 }
+            } else {
+                JOptionPane.showMessageDialog(container, "Something went wrong!"); // prompt
             }
 
         } catch(Exception ex) {

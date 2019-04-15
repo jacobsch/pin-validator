@@ -4,7 +4,6 @@
     import java.awt.*; // Everything needed
     import javax.swing.*; // GUI
     import java.awt.event.*; // Making buttons and more work
-    
     import org.json.simple.JSONObject; // Allowing us to create .json arrays
     import java.io.IOException; // Allowing more error control such as try/catch
     import java.nio.file.Files; // Writing our previously .json arrays as files

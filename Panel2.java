@@ -4,7 +4,6 @@
 import java.awt.*; // Everything needed
 import javax.swing.*; // GUI
 import java.awt.event.*; // Making buttons and more work
-
 import org.json.simple.JSONObject; // Allowing us to create .json arrays
 import org.json.simple.parser.JSONParser; // Allowing us to parse the json
 import org.json.simple.parser.ParseException; // Allowing us to parse the json
