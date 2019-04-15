@@ -1,151 +1,155 @@
-    import java.awt.*;
-    import javax.swing.*;
-    import java.awt.event.*;
+// Pin Validator Java Semi Final Project
+
+// Register panel
+    import java.awt.*; // Everything needed
+    import javax.swing.*; // GUI
+    import java.awt.event.*; // Making buttons and more work
     
-    import org.json.simple.JSONObject;
-    import java.io.IOException;
-    import java.nio.file.Files;
-    import java.nio.file.Paths;
+    import org.json.simple.JSONObject; // Allowing us to create .json arrays
+    import java.io.IOException; // Allowing more error control such as try/catch
+    import java.nio.file.Files; // Writing our previously .json arrays as files
+    import java.nio.file.Paths; // Being able to create file paths to write our files
     
-    import javax.swing.JOptionPane;
-    
+    import javax.swing.JOptionPane; // Giving us more control with our Panels
+
+    // Start of Panel1
     public class Panel1 extends JPanel {
     
-        private JPanel container;
+        private JPanel container; // Adding the container locally so it does not interfere with the other panel files
     
-        private JButton toLogin;
-        private JButton btnSubmit;
-        private JButton btnQuit;
-        private JButton btnClear;
+        private JButton toLogin; // Adding the container locally so it does not interfere with the other panel files
+        private JButton btnSubmit; // Adding the container locally so it does not interfere with the other panel files
+        private JButton btnQuit; // Adding the container locally so it does not interfere with the other panel files
+        private JButton btnClear; // Adding the container locally so it does not interfere with the other panel files
     
-        JLabel lblTitle;
-        JLabel lblName1;
-        JLabel lblName2;
-        JLabel lblLine;
-        JLabel lblpg;
-        JLabel lblFirst;
-        JTextField txtFirst;
-        JLabel lblLast;
-        JTextField txtLast;
-        JLabel lblReqf;
-        JPasswordField pwdPin;
-        JLabel lblPin;
-        JLabel lblEmail;
-        JLabel lblPhone;
-        JLabel lblAge;
-        JTextArea txtAge;
-        JLabel lblAddress;
-        JTextField txtAddress;
-        JTextField txtPhone;
-        JTextField txtEmail;
-        JComboBox comboxGender;
-        JLabel lblGender;
+        JLabel lblTitle; // Init this label to the program as lblTitle;
+        JLabel lblName1; // Init this label to the program
+        JLabel lblName2; // Init this label to the program
+        JLabel lblLine; // Init this label to the program
+        JLabel lblpg; // Init this label to the program
+        JLabel lblFirst; // Init this label to the program
+        JTextField txtFirst; // Init this textfield to the program
+        JLabel lblLast; // Init this label to the program
+        JTextField txtLast; // Init this textfield to the program
+        JLabel lblReqf; // Init this label to the program
+        JPasswordField pwdPin; // Init this password field to the program
+        JLabel lblPin; // Init this label to the program
+        JLabel lblEmail; // Init this label to the program
+        JLabel lblPhone; // Init this label to the program
+        JLabel lblAge; // Init this label to the program
+        JTextArea txtAge; // Init this textarea to the program
+        JLabel lblAddress; // Init this label to the program
+        JTextField txtAddress; // Init this textfield to the program
+        JTextField txtPhone; // Init this textfield to the program
+        JTextField txtEmail; // Init this textfield to the program
+        JComboBox comboxGender; // Init this combobox to the program
+        JLabel lblGender; // Init this label to the program
     
         public Panel1(JPanel c) {
-    
+            // Container for panel1
             container = c;
-            this.setLayout(null);
-            initComponents();
+            this.setLayout(null); // Setting the layout to null
+            initComponents(); // Running the method which is summoning our components to be rendered in the window
     
-            toLogin = new JButton("I'm already registered");
-            toLogin.setBounds(75, 310, 180, 25);
-            this.add(toLogin);
-            this.setBackground(Color.RED);
+            toLogin = new JButton("I'm already registered"); // Adding a button
+            toLogin.setBounds(75, 310, 180, 25); // Adding boundaries to the button
+            this.add(toLogin); // Adding actions to the button
+            this.setBackground(Color.RED); // Changing background colour when button pressed
             toLogin.addActionListener( new ActionListener() {
     
                 public void actionPerformed(ActionEvent e) {
-                    CardLayout cardLayout = (CardLayout) container.getLayout();
-                    cardLayout.show(container, "Login");
+                    // This is the action to the button once pressed
+                    CardLayout cardLayout = (CardLayout) container.getLayout(); // Running the next panel once pressed
+                    cardLayout.show(container, "Login"); // Running the next panel
                 }
     
             });
         }
     
         public void initComponents() {
-    
+            // This method will give values to all of the textfields, combobox, labels etc that we initialized earlier
             //construct array for combo box (pre-component)
             String[] comboxGenderItems = {"Male", "Female", "Vatougios"};
     
             //construct components
-            lblTitle = new JLabel ("Bank of Jah");
-            lblName1 = new JLabel ("By Owen Holman");
-            lblName2 = new JLabel ("and Jacob Schwartz");
-            lblLine = new JLabel ("-------------------------------");
-            lblpg = new JLabel ("Register Page");
-            lblFirst = new JLabel ("First Name *");
-            txtFirst = new JTextField (5);
-            lblLast = new JLabel ("Last Name *");
-            txtLast = new JTextField (5);
-            lblReqf = new JLabel ("* = required field");
-            pwdPin = new JPasswordField (5);
-            lblPin = new JLabel ("Pin *");
-            lblEmail = new JLabel ("Email *");
-            lblPhone = new JLabel ("Phone # *");
-            lblAge = new JLabel ("Age *");
-            txtAge = new JTextArea (5, 5);
-            lblAddress = new JLabel ("Address *");
-            txtAddress = new JTextField (5);
-            txtPhone = new JTextField (5);
-            txtEmail = new JTextField (5);
-            comboxGender = new JComboBox (comboxGenderItems);
-            lblGender = new JLabel ("Sex *");
+            lblTitle = new JLabel ("Bank of Jah"); // Giving value to our labels
+            lblName1 = new JLabel ("By Owen Holman"); // Giving value to our labels
+            lblName2 = new JLabel ("and Jacob Schwartz"); // Giving value to our labels
+            lblLine = new JLabel ("-------------------------------"); // Giving value to our labels
+            lblpg = new JLabel ("Register Page"); // Giving value to our labels
+            lblFirst = new JLabel ("First Name *"); // Giving value to our labels
+            txtFirst = new JTextField (5); // Giving value to our text field
+            lblLast = new JLabel ("Last Name *"); // Giving value to our labels
+            txtLast = new JTextField (5); // Giving value to our text field
+            lblReqf = new JLabel ("* = required field"); // Giving value to our labels
+            pwdPin = new JPasswordField (5); // Giving value to our password field
+            lblPin = new JLabel ("Pin *"); // Giving value to our labels
+            lblEmail = new JLabel ("Email *"); // Giving value to our labels
+            lblPhone = new JLabel ("Phone # *"); // Giving value to our labels
+            lblAge = new JLabel ("Age *"); // Giving value to our labels
+            txtAge = new JTextArea (5, 5); // Giving value to our text area
+            lblAddress = new JLabel ("Address *"); // Giving value to our labels
+            txtAddress = new JTextField (5); // Giving value to our text field
+            txtPhone = new JTextField (5); // Giving value to our text field
+            txtEmail = new JTextField (5); // Giving value to our text field
+            comboxGender = new JComboBox (comboxGenderItems); // Giving value to our combobox (the String array previously created (line70))
+            lblGender = new JLabel ("Sex *"); // Giving value to our labels
     
             //set component bounds (only needed by Absolute Positioning)
-            lblTitle.setBounds (330, 15, 80, 25);
-            lblName1.setBounds (315, 45, 120, 25);
-            lblName2.setBounds (307, 60, 125, 25);
-            lblLine.setBounds (300, 30, 125, 25);
-            lblFirst.setBounds (80, 115, 100, 25);
-            txtFirst.setBounds (75, 135, 180, 25);
-            lblLast.setBounds (80, 175, 100, 25);
-            txtLast.setBounds (75, 195, 180, 25);
-            lblReqf.setBounds (545, 95, 115, 25);
-            pwdPin.setBounds (75, 245, 180, 25);
-            lblPin.setBounds (80, 225, 100, 25);
-            lblEmail.setBounds (280, 115, 100, 25);
-            lblPhone.setBounds (280, 175, 100, 25);
-            lblAge.setBounds (280, 225, 100, 25);
-            txtAge.setBounds (275, 245, 180, 25);
-            lblAddress.setBounds (470, 175, 100, 25);
-            txtAddress.setBounds (470, 195, 180, 25);
-            txtPhone.setBounds (275, 195, 180, 25);
-            txtEmail.setBounds (275, 135, 180, 25);
-            comboxGender.setBounds (470, 135, 180, 25);
-            lblGender.setBounds (470, 115, 80, 25);
+            lblTitle.setBounds (330, 15, 80, 25); // Giving boundaries to our tags
+            lblName1.setBounds (315, 45, 120, 25); // Giving boundaries to our tags
+            lblName2.setBounds (307, 60, 125, 25); // Giving boundaries to our tags
+            lblLine.setBounds (300, 30, 125, 25); // Giving boundaries to our tags
+            lblFirst.setBounds (80, 115, 100, 25); // Giving boundaries to our tags
+            txtFirst.setBounds (75, 135, 180, 25); // Giving boundaries to our tags
+            lblLast.setBounds (80, 175, 100, 25); // Giving boundaries to our tags
+            txtLast.setBounds (75, 195, 180, 25); // Giving boundaries to our tags
+            lblReqf.setBounds (545, 95, 115, 25); // Giving boundaries to our tags
+            pwdPin.setBounds (75, 245, 180, 25); // Giving boundaries to our tags
+            lblPin.setBounds (80, 225, 100, 25); // Giving boundaries to our tags
+            lblEmail.setBounds (280, 115, 100, 25); // Giving boundaries to our tags
+            lblPhone.setBounds (280, 175, 100, 25); // Giving boundaries to our tags
+            lblAge.setBounds (280, 225, 100, 25); // Giving boundaries to our tags
+            txtAge.setBounds (275, 245, 180, 25); // Giving boundaries to our tags
+            lblAddress.setBounds (470, 175, 100, 25); // Giving boundaries to our tags
+            txtAddress.setBounds (470, 195, 180, 25); // Giving boundaries to our tags
+            txtPhone.setBounds (275, 195, 180, 25); // Giving boundaries to our tags
+            txtEmail.setBounds (275, 135, 180, 25); // Giving boundaries to our tags
+            comboxGender.setBounds (470, 135, 180, 25); // Giving boundaries to our tags
+            lblGender.setBounds (470, 115, 80, 25); // Giving boundaries to our tags
     
-            //add components
-            add (lblTitle);
-            add (lblName1);
-            add (lblName2);
-            add (lblLine);
-            add (lblpg);
-            add (lblFirst);
-            add (txtFirst);
-            add (lblLast);
-            add (txtLast);
-            add (lblReqf);
-            add (pwdPin);
-            add (lblPin);
-            add (lblEmail);
-            add (lblPhone);
-            add (lblAge);
-            add (txtAge);
-            add (lblAddress);
-            add (txtAddress);
-            add (txtPhone);
-            add (txtEmail);
-            add (comboxGender);
-            add (lblGender);
+            add (lblTitle); //adding components to the window
+            add (lblName1); //adding components to the window
+            add (lblName2); //adding components to the window
+            add (lblLine); //adding components to the window
+            add (lblpg); //adding components to the window
+            add (lblFirst); //adding components to the window
+            add (txtFirst); //adding components to the window
+            add (lblLast); //adding components to the window
+            add (txtLast); //adding components to the window
+            add (lblReqf); //adding components to the window
+            add (pwdPin); //adding components to the window
+            add (lblPin); //adding components to the window
+            add (lblEmail); //adding components to the window
+            add (lblPhone); //adding components to the window
+            add (lblAge); //adding components to the window
+            add (txtAge); //adding components to the window
+            add (lblAddress); //adding components to the window
+            add (txtAddress); //adding components to the window
+            add (txtPhone); //adding components to the window
+            add (txtEmail); //adding components to the window
+            add (comboxGender); //adding components to the window
+            add (lblGender); //adding components to the window
     
             btnSubmit = new JButton("Register"); //Giving the register button a label
-            btnSubmit.setBounds (300, 310, 135, 25); //Giving the register button possitioning and size
+            btnSubmit.setBounds (300, 310, 135, 25); //Giving the register button positioning and size
             add(btnSubmit); //Placing the submit button on the window
             btnSubmit.addActionListener( new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
                 //writing to the json file
                 String fileName = txtFirst.getText() + txtLast.getText() + ".json"; //titling the json file
-                String empty = "";
+                String empty = ""; // Making error control much easier
                 
                 //If the form has any empty fields or errors we handle them here
                 if (txtFirst.getText().equals(empty) || 
@@ -156,17 +160,16 @@
                     pwdPin.getText().equals(empty) ||
                     txtAge.getText().equals(empty)) 
                 {
-                    // Alert Box
-                    JOptionPane.showMessageDialog(container, "Please fill in all the required fields!");
-
+                    JOptionPane.showMessageDialog(container, "Please fill in all the required fields!"); // Alert Box
                 } else {
+                    //if the form is valid we move on to here
                     try {
-                        submitToJSON(fileName);
-                        btnClear.doClick();
+                        submitToJSON(fileName); // Naming the file the string from earlier
+                        btnClear.doClick(); // Clearing the page if succesful
                         // Success Alert Box
-                        JOptionPane.showMessageDialog(container, "Successfully registered!");
-                        CardLayout cardLayout = (CardLayout) container.getLayout();
-                        cardLayout.show(container, "Login");
+                        JOptionPane.showMessageDialog(container, "Successfully registered!"); // Alert box
+                        CardLayout cardLayout = (CardLayout) container.getLayout(); // Grabbing the next panel
+                        cardLayout.show(container, "Login"); // Opening the next panel
 
                     } catch(Exception ex) {
                         // Error Handling
@@ -174,17 +177,17 @@
                     }
                 }
             }
-        });
+        }); // End of btnSubmit
         
         //Creating a Clear button that resets all values of the boxs in the form
-        btnClear = new JButton("Clear"); //Giving value to the button
-        btnClear.setBounds (470, 245, 100, 25); //Giving placement properties to the button
+        btnClear = new JButton("Clear"); // Giving value to the button
+        btnClear.setBounds (470, 245, 100, 25); // Giving placement properties to the button
         add(btnClear); // Adding the button to the window
         btnClear.addActionListener( new ActionListener() {
-            // Empty value to reset values too
-            String clr = "";
+            String clr = ""; // Empty value to reset values too
 
             public void actionPerformed(ActionEvent e) {
+                // Cleaning all the fields to the clr String (black)
                 txtFirst.setText(clr);
                 txtLast.setText(clr);
                 txtAge.setText(clr);
@@ -193,36 +196,36 @@
                 txtAddress.setText(clr);
                 txtPhone.setText(clr);
                 comboxGender.setSelectedIndex(2); //Setting the comboxGender box to the third option
-            }
+            } // end of actionPerformed clr
+        }); // End of btnClear
 
-        });
-
-        btnQuit = new JButton("Quit"); //Giving value to the button
-        btnQuit.setBounds (470, 310, 100, 25); //Giving placement properties to the button
+        btnQuit = new JButton("Quit"); // Giving value to the button
+        btnQuit.setBounds (470, 310, 100, 25); // Giving placement properties to the button
         add(btnQuit); // Adding the button to the window
         btnQuit.addActionListener( new ActionListener() {
             //Action that happens when you press quit (it quits)
             public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
+                System.exit(0); // Once clicked, program is quit
+            } // end of actionPerformed quit
 
-        });
-    }
+        }); // End of btnQuit
+    } // End of initComponents
     //Creating the json array
     public void submitToJSON(String fileName) throws Exception {
 
-        JSONObject information = new JSONObject();
+        JSONObject information = new JSONObject(); // init the first object (array)
+        // In the .json object (array) we previously created we will add the following:
         information.put("fname", txtFirst.getText());
         information.put("lname", txtLast.getText());
-        information.put("age", Integer.parseInt(txtAge.getText()));
+        information.put("age", Integer.parseInt(txtAge.getText())); // Parsing the age as a number
         information.put("pin", pwdPin.getText());
         information.put("email", txtEmail.getText());
         information.put("address", txtAddress.getText());
         information.put("phone", txtPhone.getText());
-        information.put("sex", String.valueOf(comboxGender.getSelectedItem()));
+        information.put("sex", String.valueOf(comboxGender.getSelectedItem())); // Aquiring the String value of the combobox, rather than seeing "2" you see "Vatougios"
         //Writing the file to the /accounts path with the fileName created earlier
         Files.write(Paths.get("accounts/" + fileName), information.toJSONString().getBytes());
 
-    }
+    } // End of submittoJSON
 
-}
+} // End of Panel1

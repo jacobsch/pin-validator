@@ -1,4 +1,6 @@
 // Pin Validator Java Semi Final Project
+
+// Master File
 /*
    Created by Owen Holman and Jacob Schwartz
    Pin Validator mimics a bank ATM
@@ -14,6 +16,7 @@ import java.awt.event.*; // Making buttons and more work
 import java.awt.event.ActionEvent; // Making buttons work
 import java.awt.event.ActionListener; // Making buttons work
 
+// Start of JahWindow
 public class JahWindow extends JFrame {
   
 	JPanel container; // Adding JPanel 'container' to the main program
@@ -42,6 +45,5 @@ public class JahWindow extends JFrame {
         public static void main(String[] args) {
               new JahWindow(); //init the window, run the program
       }
-}
-// End of JahWindow
+} // End of JahWindow
 // End of program
