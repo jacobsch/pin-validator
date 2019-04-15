@@ -3,9 +3,13 @@
 To run program compile through JahWindow, currently through BlueJay but will be compiling into .jar soon
 
 If you don't want to register you can use our dummy account for login purposes:
+
 First name: Mark
+
 Last name: Barrett
+
 Email: mbarrett@sd44.ca
+
 Pin: 1234
 
 This is the assignment are teacher tasked us with creating:
