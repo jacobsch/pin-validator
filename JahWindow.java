@@ -16,7 +16,7 @@ import java.awt.event.*; // Making buttons and more work
 import java.awt.event.ActionEvent; // Making buttons work
 import java.awt.event.ActionListener; // Making buttons work
 
-// Start of JahWindow
+// Start of class JahWindow
 public class JahWindow extends JFrame {
   
 	JPanel container; // Adding JPanel 'container' to the main program
