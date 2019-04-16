@@ -15,7 +15,6 @@
     public class Panel1 extends JPanel {
     
         private JPanel container; // Adding the container locally so it does not interfere with the other panel files
-    
         private JButton toLogin; // Adding the container locally so it does not interfere with the other panel files
         private JButton btnSubmit; // Adding the container locally so it does not interfere with the other panel files
         private JButton btnQuit; // Adding the container locally so it does not interfere with the other panel files
