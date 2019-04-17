@@ -83,8 +83,10 @@ public class Panel3 extends JPanel {
         try {
 
             BufferedImage xPic = ImageIO.read(new File("src/xxxtentacion.jpg")); // init image to the panel
-            JLabel picLabel = new JLabel(new ImageIcon(xPic)); // Giving value to the image
-            picLabel.setBounds(125, 100, 500, 250); // Giving boundaries to our image
+            Image sclImg = xPic.getScaledInstance(250, 250, Image.SCALE_SMOOTH);
+            ImageIcon imgIcon = new ImageIcon(sclImg);
+            JLabel picLabel = new JLabel(imgIcon); // Giving value to the image
+            picLabel.setBounds(225, 100, 250, 250); // Giving boundaries to our image
             add(picLabel); // adding image to the panel
 
         } catch(Exception ex) {
