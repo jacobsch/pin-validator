@@ -47,7 +47,8 @@ public class Panel3 extends JPanel {
             // action when btn clicked
             public void actionPerformed(ActionEvent e) {
 
-                music("pause");
+                // music("pause"); nice try Owen, doesn't work
+                AudioPlayer.player.stop(audioStream); // but this does
                 c.remove(accepted);
                 revalidate();
                 repaint();
