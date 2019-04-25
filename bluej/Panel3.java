@@ -44,6 +44,13 @@ public class Panel3 extends JPanel {
         toLogin.addActionListener( new ActionListener() {
             // action when btn clicked
             public void actionPerformed(ActionEvent e) {
+                
+                c.remove(accepted);
+                revalidate();
+                repaint();
+                CardLayout cardLayout = (CardLayout) container.getLayout();
+                cardLayout.show(container, "Login");
+                
             } // end of actionPerformed
         }); // end of toLogin btn
 
