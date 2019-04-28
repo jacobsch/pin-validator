@@ -1,5 +1,0 @@
-main: main.JahWindow.JahWindow
-name: JahWindow
-version: 1.0
-author: Owen Holman and Jacob Schwartz
-description: A .jar login program
