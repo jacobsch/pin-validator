@@ -34,6 +34,9 @@ IF THE FOLDER LAYOUT IS NOT EXACTLY AS DESCRIBED ABOVE, THE PROGRAM WILL NOT RUN
 If you don't want to register you can use our dummy account for login purposes:
 
 First name: Mark
+
 Last name: Barrett
+
 Email: mbarrett@sd44.ca
+
 Pin: 1234
